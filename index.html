@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Bhasale | Senior Director, Clinical Data Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+            .gradient-bg {
+                background: linear-gradient(135deg, #4338ca 0%, #818cf8 100%);
+            }
+            .card-hover:hover {
+                transform: translateY(-5px) rotate(1deg);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            }
+            .timeline-item:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                left: 16px;
+                top: 32px;
+                height: calc(100% - 32px);
+                width: 2px;
+                background: linear-gradient(to bottom, #818cf8, #c7d2fe);
+            }
+            .nav-link {
+                position: relative;
+            }
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 3px;
+                bottom: 0;
+                left: 0;
+                background-color: #fbbf24;
+                transition: width 0.3s ease;
+            }
+            .nav-link:hover::after {
+                width: 100%;
+            }
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+            .floating {
+                animation: float 6s ease-in-out infinite;
+            }
+            .data-particles {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+            .data-particle {
+                position: absolute;
+                background-color: rgba(255,255,255,0.3);
+                border-radius: 50%;
+            }
+            .fun-fact {
+                transition: all 0.3s ease;
+                transform-style: preserve-3d;
+            }
+            .fun-fact:hover {
+                transform: rotateY(10deg) scale(1.03);
+            }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-indigo-50">
+    <!-- Animated background particles -->
+    <div class="data-particles" id="particles"></div>
+
+    <!-- Navigation -->
+	    <nav class="bg-white/90 backdrop-blur-sm fixed w-full z-10">
+	        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+	            <div class="flex justify-between h-16">
+	                <div class="flex items-center">
+	                    <span class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Ajay 🧙‍♀️</span>
+	                </div>
+	                <div class="hidden md:flex items-center space-x-8">
+	                    <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
+	                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
+	                    <a href="#experience" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Experience</a>
+	                    <a href="#expertise" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Expertise</a>
+	                    <a href="#achievements" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Achievements</a>
+	                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+	                </div>
+	                <div class="md:hidden flex items-center">
+	                    <button id="menu-toggle" class="text-gray-500 hover:text-indigo-600 focus:outline-none">
+	                        <i class="fas fa-bars text-xl"></i>
+	                    </button>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- Mobile menu -->
+	        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-sm shadow-lg">
+	            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+	                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50/50">Home</a>
+	                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50/50">About</a>
+	                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50/50">Journey</a>
+	                <a href="#expertise" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50/50">Superpowers</a>
+	                <a href="#achievements" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50/50">Trophies</a>
+	                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50/50">Chat</a>
+	            </div>
+	        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white pt-24 pb-20 md:pt-32 md:pb-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Ajay Bhasale</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 flex items-center">
+                        <span class="mr-3">Senior Director, Data Management</span>
+                        <span class="text-yellow-300 animate-pulse">✨</span>
+                    </h2>
+                    <p class="text-lg md:text-xl mb-8 opacity-90">Transforming biopharmaceutical research through innovative data strategies and leadership in clinical data management.</p>
+                    <div class="flex space-x-4">
+                       <a href="#contact" class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-full font-medium transition duration-300 flex items-center">
+                           <i class="fas fa-paper-plane mr-2"></i> Get In Touch
+                       </a>
+                       <a href="#about" class="border border-white text-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-full font-medium transition duration-300 flex items-center">
+                           <i class="fas fa-user-astronaut mr-2"></i> Learn More
+                       </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-400 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <!-- Placeholder for profile image -->
+                            <div class="w-full h-full bg-gray-300 flex items-center justify-right">
+                                <img src="img\team\Ajay.png" alt="Profile Image" class="w-full h-full object-cover">
+                                <i class="fas fa-user text-6xl text-white"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg">
+                            <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white rounded-full p-3">
+                                <i class="fas fa-rocket text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-4 flex justify-center items-center">
+                                <span class="mr-3">About Me</span>
+                                <span class="text-yellow-500">🤓</span>
+                            </h2>
+                            <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="md:flex md:items-center md:space-x-12">
+                <div class="md:w-1/3 mb-10 md:mb-0">
+                    <div class="bg-gray-100 p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">Profile Snapshot</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-user-tie text-blue-600 mt-1 mr-3"></i>
+                                <span>Senior Director with 15+ years in<br>Clinical Data Management</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-3"></i>
+                                <span>Based in San Mateo, CA</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-graduation-cap text-blue-600 mt-1 mr-3"></i>
+                                <span>Bachelor of Engineering <br>(Computer Science)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-certificate text-blue-600 mt-1 mr-3"></i>
+                                <div>
+                                    <span>Relevant Certifications:<br>- Health Economics, Outcomes Research<br>- Machine Learning<br>- CDISC (C-DASH, SDTM, ADaM, ODM)</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-semibold mb-6">Professional Summary</h3>
+                    <p class="text-lg mb-6 text-gray-700 leading-relaxed">
+                        Seasoned pharmaceutical executive with extensive experience in clinical data management, analytics and programming within the biopharmaceutical industry. Proven track record of leading cross-functional teams to deliver high-quality data management solutions that accelerate drug development and ensure regulatory compliance.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-700 leading-relaxed">
+                        My superpower? Making complex data concepts accessible to everyone from scientists to CEOs. I am passionate about data standards, process optimization, and mentoring the next generation of data professionals.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                    <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-4 rounded-xl text-center card-hover">
+                            <div class="text-indigo-600 text-3xl mb-2">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <h4 class="font-semibold">5+</h4>
+                            <p class="text-sm text-gray-600">Therapeutic Areas</p>
+                            <div class="mt-2 text-yellow-500 text-xs">(from A to Z)</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-4 rounded-xl text-center card-hover">
+                            <div class="text-indigo-600 text-3xl mb-2">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h4 class="font-semibold">75+</h4>
+                            <p class="text-sm text-gray-600">Clinical Trials</p>
+                            <div class="mt-2 text-yellow-500 text-xs">(and counting!)</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-4 rounded-xl text-center card-hover">
+                            <div class="text-indigo-600 text-3xl mb-2">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="font-semibold">30+</h4>
+                            <p class="text-sm text-gray-600">Team Members</p>
+                            <div class="mt-2 text-yellow-500 text-xs">(my data tribe)</div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-4 rounded-xl text-center card-hover">
+                            <div class="text-indigo-600 text-3xl mb-2">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4 class="font-semibold">20+</h4>
+                            <p class="text-sm text-gray-600">Recognitions</p>
+                            <div class="mt-2 text-yellow-500 text-xs">(shiny trophies)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 flex justify-center items-center">
+                    <span class="mr-3">My Professional Journey</span>
+                    <span class="text-indigo-600">🚀</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">From data newbie to data guru - here's how I leveled up in the pharma world</p>
+            </div>
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition duration-300">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Senior Director, Data Management</h3>
+                                <span class="text-blue-600 font-medium">2023 - 2024</span>
+                            </div>
+                            <h4 class="text-lg text-gray-700 mb-4">CymaBay Therapeutics (Gilead Sciences), Fremont, CA</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Managed internal teams and CRO collaborations, ensuring efficient Phase I-III trial operations for a rare disease portfolio.</li>
+                                <li>Optimized pivotal phase III trial execution, reducing database lock time by 40% via cross-functional efficiencies.</li>
+                                <li>Developed Business Intelligence framework for a 35% faster top-line results.</li>
+                                <li>Optimized risk-based monitoring by delivering key insights on CRC, CRA, and CRO performance.</li>
+                                <li>Led two successful regulatory inspections, securing U.S. and EU marketing approvals for Livdelzi.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition duration-300">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Senior Director, Clinical Data Management</h3>
+                                <span class="text-blue-600 font-medium">2018 - 2022</span>
+                            </div>
+                            <h4 class="text-lg text-gray-700 mb-4">Arena Pharamceuticals (Pfizer), San Diego, CA</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Established and scaled a high-performing data management team for inflammatory pain and cardiovascular portfolios.</li>
+                                <li>Authored & deployed SOPs and data standards, streamlining CDISC-compliant study execution.</li>
+                                <li>Pioneered BI analytics framework, enabling routine data driven-decisions.</li>
+                                <li>Optimized processes to accelerate database lock timelines by 30%.</li>
+                                <li>Key contributor to COVID-19 vaccine trial data strategy.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 3 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition duration-300">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Director, Clinical Data Management</h3>
+                                <span class="text-blue-600 font-medium">2018 - 2018</span>
+                            </div>
+                            <h4 class="text-lg text-gray-700 mb-4">Aquinox Pharamceuticals, San Bruno, CA</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Established a high-performing data management department supporting interstitial cystitis/bladder pain syndrome program.</li>
+                                <li>Directed CRO operations to maintain data quality, meet regulatory standards, and achieve timely database lock in a pivotal phase III study.</li>
+                                <li>Established data-driven monitoring for Site and CRO performance using Business Intelligence.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Experience Item 4 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition duration-300">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Director, Clinical Data Management</h3>
+                                <span class="text-blue-600 font-medium">2017 - 2018</span>
+                            </div>
+                            <h4 class="text-lg text-gray-700 mb-4">Ionis Pharamceuticals, Carlsbad, CA</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Expanded data management team to 12 members, including contractors, advancing rare disease development portfolios.</li>
+                                <li>Optimized resourcing through strategic insourcing and outsourcing, accelerating topline outcomes.</li>
+                                <li>Streamlined data management across 25+ phase I-III clinical trials, achieving a 15% drop in query rates.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Experience Item 5 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                           <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition duration-300">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Program Director, Evidence Science and Innovation</h3>
+                                <span class="text-blue-600 font-medium">2014 - 2017</span>
+                            </div>
+                            <h4 class="text-lg text-gray-700 mb-4">Genentech Inc., South San Francisco, CA</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Established the Design and Technology Lab (DTL), assembling a specialized team in UX, Big Data, and Predictive Analytics.</li>
+                                <li>Directed real-world data access initiatives, optimizing evidence availability for HCPs at point-of-care.</li>
+                                <li>Established a technology-driven solution for capturing product evidence and optimizing MCO collaboration.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Experience Item 6 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                           <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition duration-300">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                                <h3 class="text-xl font-semibold">Associate Director, Clinical Data Management and Programming</h3>
+                                <span class="text-blue-600 font-medium">2010 - 2014</span>
+                            </div>
+                            <h4 class="text-lg text-gray-700 mb-4">Roche | Genentech Inc., South San Francisco, CA</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Developed and structured clinical data management and programming function after Roche-Genentech integration.</li>
+                                <li>Led integration of 25 studies across 10 clinical products post-merger, ensuring seamless transition.</li>
+                                <li>Developed and delivered a scalable digital solution to optimize HCP engagement in NSCLC.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+               <h2 class="text-3xl font-bold text-gray-900 mb-4 flex justify-center items-center">
+                   <span class="mr-3">My Data Superpowers</span>
+                   <span class="text-yellow-500">🦸‍♀️</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">The skills I have mastered to fight the forces of messy data and inefficient processes</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Expertise Card 2 -->
+                <div class="bg-indigo-50 p-8 rounded-lg shadow-sm card-hover transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Leadership</h3>
+                    <p class="text-gray-700 mb-6">
+                        Building and mentoring high-performing global data management teams, fostering collaboration across functions, and creating a culture of continuous improvement and innovation.
+                    </p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Expertise Card 1 -->
+                <div class="bg-indigo-50 p-8 rounded-xl shadow-sm card-hover transition duration-300">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Data Strategy</h3>
+                    <p class="text-gray-700 mb-6">
+                        Developing comprehensive data strategies aligned with clinical development objectives, ensuring data quality, integrity, and regulatory compliance throughout the drug development lifecycle.
+                    </p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <!-- Expertise Card 4 -->
+                <div class="bg-indigo-50 p-8 rounded-lg shadow-sm card-hover transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Regulatory Compliance</h3>
+                    <p class="text-gray-700 mb-6">
+                        Ensuring adherence to FDA, EMA, ICH-GCP, and other regulatory requirements, with expertise in CDISC standards (C-DASH, SDTM, ADaM, ODM), 21 CFR Part 11, and data privacy regulations.
+                    </p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+					    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <!-- Expertise Card 6 -->
+                <div class="bg-indigo-50 p-8 rounded-lg shadow-sm card-hover transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Therapeutic Expertise</h3>
+                    <p class="text-gray-700 mb-6">
+                        Deep understanding of oncology, rare diseases, immunology, inflammatory pain, hepatology and cardiovascular therapeutics, with ability to tailor data strategies to specific therapeutic area requirements.
+                    </p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+					    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <!-- Expertise Card 5 -->
+                <div class="bg-indigo-50 p-8 rounded-lg shadow-sm card-hover transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Process Optimization</h3>
+                    <p class="text-gray-700 mb-6">
+                        Implementing lean methodologies and digital solutions to streamline clinical data processes, reduce cycle times, and improve operational efficiency without compromising quality.
+                    </p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+					    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                <!-- Expertise Card 3 -->
+                <div class="bg-indigo-50 p-8 rounded-lg shadow-sm card-hover transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Data Analytics</h3>
+                    <p class="text-gray-700 mb-6">
+                        Leveraging advanced analytics, machine learning, gen AI, and visualization techniques to derive actionable insights from clinical trial data, supporting evidence-based decision making.
+                    </p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-indigo-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 flex justify-center items-center">
+                    <span class="mr-3">My Trophy Case</span>
+                    <span class="text-indigo-600">🏆</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">High-profile recognitions for my data wizardry over the years</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Achievement 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover transition duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gradient-to-br from-yellow-100 to-yellow-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-trophy text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Cymply The Best Awards (x 2)</h3>
+                            <p class="text-gray-600">CymaBay Therapeutics</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        Recognized for pioneering the implementation of a Business Intelligence framework for real-time clinical data quality monitoring, driving significant improvements in data accuracy and reducing time to top-line results, ultimately enhancing data-driven decision-making in clinical research.
+                    </p>
+                    <div class="mt-4">
+					    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">#BusinessIntelligence</span>
+					    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">#ClinicalDataQuality</span>
+                    </div>
+                </div>
+
+                <!-- Achievement 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover transition duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gradient-to-br from-yellow-100 to-yellow-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-medal text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Excellence in Leadership</h3>
+                            <p class="text-gray-600">Arena Pharmaceiticals</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        Acknowledged for leadership during the COVID-19 pandemic, establishing a decision framework to preserve eCOA (ePRO  ClinRO) data integrity across three critical clinical programs, ensuring reliability, continuity, and scientific validity amid unprecedented challenges.
+                    </p>
+                    <div class="mt-4">
+					    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">#Leadership</span>
+					    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">#ClinicalDataIntegrity</span>
+                    </div>
+                </div>
+
+                <!-- Achievement 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover transition duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gradient-to-br from-yellow-100 to-yellow-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-medal text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">NSCLC: gDATA Program</h3>
+                            <p class="text-gray-600">Genentech Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        Recognized for development and deployment of a responsive mobile/web platform integrating patient profile-based outcomes from nine pivotal NSCLC studies, accelerating evidence-driven HCP communication and optimizing access to critical clinical insights for informed decision-making.
+                    </p>
+                    <div class="mt-4">
+                        <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">#NSCLCResearch</span>
+                        <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">#HealthcareInnovation</span>
+                    </div>
+                </div>
+
+                <!-- Achievement 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm card-hover transition duration-300">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-gradient-to-br from-yellow-100 to-yellow-200 p-3 rounded-full mr-4">
+                            <i class="fas fa-trophy text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">ACE Innovator Awards (x 2)</h3>
+                            <p class="text-gray-600">Genentech Inc</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        Recognized for establishing the Design & Technology Lab in U.S. Medical Affairs, delivering two digital solutions through exceptional design and engineering. These innovations forged new MCO collaboration pathways, rapidly identifying evidence gaps to inform strategy for marketed drugs.
+                    </p>
+                    <div class="mt-4">
+                       <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">#DigitalHealthSolutions</span>
+                       <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">#MedicalInnovation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+	    <section id="contact" class="py-20 bg-white">
+	        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+	            <div class="text-center mb-16">
+	                <h2 class="text-3xl font-bold text-gray-900 mb-4 flex justify-center items-center">
+	                    <span class="mr-3">Let's Chat Data!</span>
+	                    <span class="text-indigo-600">💬</span>
+	                </h2>
+	                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+	                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Want to discuss how I can help with your data challenges? Drop me a message!</p>
+	            </div>
+	            <div class="md:flex md:space-x-8">
+	                <div class="md:w-1/2 mb-10 md:mb-0">
+	                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+	                    <div class="w-screen">
+						    <p class="text-lg mb-8 text-gray-700 w-full text-left">
+						        I am always excited to connect with fellow data enthusiasts, potential collaborators, or anyone interested in advancing pharmaceutical data science.
+						    </p>
+                        </div>
+	                    <div class="space-y-6">
+	                        <div class="flex items-start bg-indigo-50 p-4 rounded-xl">
+	                            <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-3 rounded-full mr-4">
+	                                <i class="fas fa-envelope text-indigo-600"></i>
+	                            </div>
+	                            <div>
+								    <h4 class="font-semibold">Email</h4>
+								    <p class="text-gray-700">
+								        <a href="mailto:ajay.bhasale@gmail.com" class="text-blue-600">ajay.bhasale@gmail.com</a>
+								    </p>
+                                </div>
+	                        </div>
+	                        <div class="flex items-start bg-indigo-50 p-4 rounded-xl">
+	                            <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-3 rounded-full mr-4">
+	                                <i class="fas fa-phone-alt text-indigo-600"></i>
+	                            </div>
+	                            <div>
+	                                <h4 class="font-semibold">Phone</h4>
+	                                <p class="text-gray-700">(650) 477-0119</p>
+	                            </div>
+	                        </div>
+	                        <div class="flex items-start bg-indigo-50 p-4 rounded-xl">
+	                            <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-3 rounded-full mr-4">
+	                                <i class="fas fa-map-marker-alt text-indigo-600"></i>
+	                            </div>
+	                            <div>
+	                                <h4 class="font-semibold">Location</h4>
+	                                <p class="text-gray-700">San Mateo, California, USA</p>
+	                            </div>
+	                        </div>
+	                        <div class="flex items-start bg-indigo-50 p-4 rounded-xl">
+	                            <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-3 rounded-full mr-4">
+	                                <i class="fab fa-linkedin-in text-indigo-600"></i>
+	                            </div>
+	                            <div>
+								    <h4 class="font-semibold">LinkedIn</h4>
+								    <p class="text-gray-700">
+								        <a href="https://linkedin.com/in/ajaybhasale" target="_blank" class="text-blue-600">
+								            linkedin.com/in/ajaybhasale
+								        </a>
+								    </p>
+                                </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-xl font-bold">Ajay Bhasale</span>
+                    <p class="mt-2 text-gray-400">Senior Director, Clinical Data Management</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://linkedin.com/in/ajaybhasale" target="_blank" class="text-gray-400 hover:text-white">
+					    <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://x.com/AjayMB" target="_blank" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800">
+                <p class="text-center text-gray-400 text-sm">
+                    &copy; 2025 Ajay Bhasale. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.add('hidden');
+
+                    // Calculate position with offset for fixed header
+                    const headerHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Create animated particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('data-particle');
+
+                // Random size between 2px and 5px
+                const size = Math.random() * 3 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+
+                container.appendChild(particle);
+            }
+        }
+
+        // Initialize particles when DOM is loaded
+        document.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+</body>
+</html>
