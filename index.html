@@ -723,6 +723,20 @@
 
         // Initialize particles when DOM is loaded
         document.addEventListener('DOMContentLoaded', createParticles);
+
+	// Force top scroll on initial load
+        history.scrollRestoration = "manual";
+        window.onload = function() {
+            window.scrollTo(0, 0);
+            document.body.focus();
+        };
+        
+        // Extra insurance against iframe focus
+        document.addEventListener('DOMContentLoaded', () => {
+            window.scrollTo(0, 0);
+            document.body.setAttribute('tabindex', '-1');
+            document.body.focus();
+        });
     </script>
 </body>
 </html>
